@@ -15,6 +15,10 @@ class SetThemeForMyroute implements ObserverInterface
     /** @var DesignInterface  */
     private DesignInterface $design;
 
+    /**
+     * @param Http $request
+     * @param DesignInterface $design
+     */
     public function __construct(
         Http $request,
         DesignInterface $design
@@ -23,6 +27,9 @@ class SetThemeForMyroute implements ObserverInterface
         $this->design = $design;
     }
 
+    /**
+     * @param Observer $observer
+     */
     public function execute(Observer $observer): void
     {
         $pathInfo = $this->request->getPathInfo();
